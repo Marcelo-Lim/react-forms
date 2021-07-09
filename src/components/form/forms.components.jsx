@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Paper, Grid,TextField, Button, Typography, Avatar, Helper} from '@material-ui/core';
+import { Container, Paper, Grid,TextField, Button, Typography, Avatar} from '@material-ui/core';
 import FingerprintSharpIcon from '@material-ui/icons/FingerprintSharp';
 
 import useForm from './useForm.components';
@@ -25,15 +25,15 @@ const {handleChange, values, handleSubmit, errors} = useForm(submitForm, validat
                   </Avatar>
                   <h5>Register now!</h5>
                   <Typography variant="caption" fullWidth style= {{ marginBottom: "1%"}}>Create an account</Typography>
-                  <TextField  name="username" label="Username" placeholder='Enter your username'  value={values.username} onChange={handleChange} fullWidth style= {{ marginBottom: "6%"}} variant="outlined" helperText={errors.username}/>
-                  <TextField  name="email" label="Email" type="email" placeholder='Enter your email' value={values.email} onChange={handleChange} fullWidth style= {{ marginBottom: "6%"}} variant="outlined" helperText={errors.email}/>
-                  <TextField  name="contactNum" label="Contact no." placeholder='Enter your contact no.' type="number" size="20" minlength="11" maxWidth="12" value={values.contactNum} onChange={handleChange} fullWidth style= {{ marginBottom: "7%"}} variant="outlined" helperText={errors.contactNum}/>
+                  <TextField  name="username" label="Username" placeholder='Enter your username'  value={values.username} onChange={handleChange} fullWidth style= {{ marginBottom: "6%"}} variant="outlined" error={Boolean(errors.username)} helperText={errors.username}/>
+                  <TextField  name="email" label="Email" type="email" placeholder='Enter your email' value={values.email} onChange={handleChange} fullWidth style= {{ marginBottom: "6%"}} variant="outlined" error={Boolean(errors.email)} helperText={errors.email}/>
+                  <TextField  name="contactNum" label="Contact no." placeholder='Enter your contact no.' type="text" value={values.contactNum} onChange={handleChange} fullWidth style= {{ marginBottom: "7%"}} variant="outlined" error={Boolean(errors.contactNum)} helperText={errors.contactNum}/>
                   <TextField  name="password" label="Password" type="password" placeholder='Enter your password'
                     value={values.password} onChange={handleChange} 
-                    fullWidth style= {{ marginBottom: "6%"}} variant="outlined" helperText={errors.password}/>
-                  <TextField  name="confirmPass" label="Confirm Password" type="password" placeholder='Confirm your password'  
+                    fullWidth style= {{ marginBottom: "6%"}} variant="outlined"  error={Boolean(errors.password)} helperText={errors.password}/>
+                  <TextField name="confirmPass" label="Confirm Password" type="password" placeholder='Confirm your password'  
                   value={values.confirmPass} onChange={handleChange}
-                  fullWidth style= {{ marginBottom: "5%"}} variant="outlined" helperText={errors.confirmPass}/>
+                  fullWidth style= {{ marginBottom: "5%"}} variant="outlined" error={Boolean(errors.confirmPass)} helperText={errors.confirmPass}/>
                 </Grid>
                 <Button type="submit" variant='contained' className={classes.button} style= {{ marginBottom: "1%"}}>Submit</Button>
             </form>

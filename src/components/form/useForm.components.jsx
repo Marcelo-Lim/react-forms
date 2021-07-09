@@ -19,6 +19,7 @@ const useForm = (callback, validate) => {
             ...values,
             [name]: value
         })
+        setErrors(validate(values));
     };
     
     const handleSubmit = e => {
@@ -33,7 +34,6 @@ const useForm = (callback, validate) => {
             callback();
         }
     },
-        [errors]
     );
 
     return {handleChange, values, handleSubmit, errors};

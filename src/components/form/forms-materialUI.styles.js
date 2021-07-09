@@ -37,7 +37,7 @@ export default makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
         padding: '20px 10px',
-        margin: '40px auto',
+        margin: '100px auto',
         width: '300',
         color: '#ffffff',
         background: 'linear-gradient(45deg, #a7e681 30%,#82e645 90%)',
