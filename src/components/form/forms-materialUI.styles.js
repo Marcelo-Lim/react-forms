@@ -7,7 +7,7 @@ export default makeStyles((theme) => ({
       '& > *': {
         margin: theme.spacing(60),
         width: theme.spacing(40),
-        height: theme.spacing(65),
+        height: theme.spacing(80),
       },
     },
 
@@ -52,6 +52,7 @@ export default makeStyles((theme) => ({
         padding: '0 30px',
         boxShadow: '0 3px 5px 2px rgb(29, 114, 204, .3)',
     },
+
     avatar: {
      backgroundColor:'#46b4f0',
     },

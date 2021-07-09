@@ -4,11 +4,14 @@ export default function validateInfo(values) {
     if (!values.username.trim()) {
       errors.username = 'Username required';
     }
+    else if(!/^[A-Za-z][A-Za-z0-9]*(?:_+[A-Za-z0-9]+)*$/.test(values.username)){
+      errors.username= 'Invalid username';
+    }
   
     if (!values.email) {
       errors.email = 'Email required';
     } 
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    else if (!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       .test(values.email)) {
       errors.email = 'Invalid input';
     }
