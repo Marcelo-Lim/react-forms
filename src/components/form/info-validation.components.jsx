@@ -8,7 +8,8 @@ export default function validateInfo(values) {
     if (!values.email) {
       errors.email = 'Email required';
     } 
-    else if (!/\S+@\S+\.\S+/.test(values.email)) {
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      .test(values.email)) {
       errors.email = 'Invalid input';
     }
 
@@ -26,10 +27,10 @@ export default function validateInfo(values) {
       errors.confirmPass = 'Passwords do not match';
     }
 
-    if (!value.contactNum){
+    if (!values.contactNum){
         errors.contactNum = 'Contact number is required'
     }
-    else if (!/^[0-9]*$/.test(values.contactNum) && values.contactNum.length != /((^(\+)(\d){12}$)|(^\d{11}$))/){
+    else if (!/^[0-9]*$/.test(values.contactNum) && values.contactNum.length !== /((^(\+)(\d){12}$)|(^\d{11}$))/){
         errors.contactNum = 'Please enter a valid contact number'
     }
 
